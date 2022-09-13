@@ -1,0 +1,20 @@
+<div class="mx-auto text-center" style="width: 18rem;">
+  <h6 class="text-secondary">Success! Pleace use this link:</h6>
+  <input id="myShortUrl" type="text" class="form-control" name="short_url" value="http://localhost:3000/{{code}}">
+  <button onclick="copyText()" class="btn btn-secondary my-3">Copy</button>
+  <a class="btn btn-primary my-3" href="/">Return</a>
+</div>
+
+<script>
+  function copyText() {
+    // Get the text field
+    const Text = document.getElementById("myShortUrl");
+    // Select the text field
+    Text.select();
+    Text.setSelectionRange(0, 99999); // For mobile devices
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(Text.value);
+    // Alert the copied text
+    console.log(Text)
+  }
+</script>
